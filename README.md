@@ -1,5 +1,6 @@
 # ArrayADT
 
-Has many array based abstract types.
+Has many **array** based abstract types.
 
-## Types present
+## Types present:
+
