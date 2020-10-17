@@ -1314,42 +1314,339 @@ class Array2D:
 
 
     def __radd__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val + self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] + self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] + self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rsub__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val - self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] - self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] - self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rmul__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val * self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] * self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] * self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rtruediv__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val / self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] / self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] / self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rfloordiv__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val // self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] // self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] // self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rmod__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val % self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] % self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] % self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rpow__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val ** self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] ** self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] ** self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rlshift__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val << self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] << self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] << self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rrshift__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val >> self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] >> self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] >> self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rand__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val & self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] & self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] & self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __ror__(self, val):
-        pass
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val | self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] | self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] | self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
 
     def __rxor__(self, val):
-        pass
-
-
+        total = Array2D(self.numRows(), self.numCols())
+        if isinstance(val, (int, float)):
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val ^ self[i, j] 
+            return total
+        elif isinstance(val, Array2D) and self.shape() == val.shape():
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i, j] ^ self[i, j] 
+            return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            for row in val:
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = val[i][j] ^ self[i, j] 
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
 
 
 
