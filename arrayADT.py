@@ -799,6 +799,39 @@ class Array2D:
     def __sub__(self, val):
         pass
 
+    def __mul__(self, val):
+        pass
+
+    def __truediv__(self, val):
+        pass
+
+    def __floordiv__(self, val):
+        pass
+
+    def __mod__(self, val):
+        pass
+
+    def __pow__(self, val):
+        pass
+
+    def __lshift__(self, val):
+        pass
+
+    def __rshift__(self, val):
+        pass
+
+    def __and__(self, val):
+        pass
+
+    def __or__(self, val):
+        pass
+
+    def __xor__(self, val):
+        pass
+    
+
+
+
 
     
            
