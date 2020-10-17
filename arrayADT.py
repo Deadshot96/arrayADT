@@ -1313,6 +1313,41 @@ class Array2D:
             raise TypeError('Operation between invalid types.')
 
 
+    def __radd__(self, val):
+        pass
+
+    def __rsub__(self, val):
+        pass
+
+    def __rmul__(self, val):
+        pass
+
+    def __rtruediv__(self, val):
+        pass
+
+    def __rfloordiv__(self, val):
+        pass
+
+    def __rmod__(self, val):
+        pass
+
+    def __rpow__(self, val):
+        pass
+
+    def __rlshift__(self, val):
+        pass
+
+    def __rrshift__(self, val):
+        pass
+
+    def __rand__(self, val):
+        pass
+
+    def __ror__(self, val):
+        pass
+
+    def __rxor__(self, val):
+        pass
 
 
 
@@ -1320,10 +1355,6 @@ class Array2D:
 
 
 
-
-    
-           
-        
 
 class MultiArray:
         
