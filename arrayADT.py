@@ -773,25 +773,25 @@ class Array2D:
         if isinstance(val, (int, float)):
             for i in range(self.numRows()):
                 for j in range(self.numCols()):
+                    # Main operation here
                     total[i, j] = self[i, j] + val
             return total
         elif isinstance(val, Array2D) and self.shape() == val.shape():
             for i in range(self.numRows()):
                 for j in range(self.numCols()):
+                    # Main operation here
                     total[i, j] = self[i, j] + val[i, j]
             return total
         elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
-            s = set(list(map(len, val)))
-            if len(s) == 1 and s.pop() == self.numCols():
-                pass
-
             for row in val:
-                if not isinstance(row, (list, tuple)) and len(row) != self.numCols():
-                    raise IndexError("Invalid indices.")
-            else:
-                for i, row in enumerate(val):
-                    for j, index in enumerate(row):
-                        total[i, j] = self[i, j] + val[i, j] 
+                if not isinstance(row, (list, tuple)) or len(row) != self.numCols():
+                    raise IndexError("The indices do not match.")
+            
+            for i in range(self.numRows()):
+                for j in range(self.numCols()):
+                    # Main operation here
+                    total[i, j] = self[i, j] + val[i][j]
+            return total
         else:
             raise TypeError('Operation between invalid types.')
 
