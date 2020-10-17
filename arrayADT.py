@@ -250,21 +250,22 @@ class Array:
             raise TypeError('Operation between invalid types.')
     
     def __pos__(self):
-        return self.copy()
+        return self
     
     def __neg__(self):
-        return -1 * self.copy()
+        return -1 * self
     
     def __iadd__(self, val):
-        if isinstance(val, (int, float)):
-            for i in range(len(self)):
-                self[i] = self[i] + val
-        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
-            for i in range(len(self)):
-                self[i] = self[i] + val[i]
-        else:
-            raise TypeError('Operation between invalid types.')
-        return self
+        # if isinstance(val, (int, float)):
+        #     for i in range(len(self)):
+        #         self[i] = self[i] + val
+        # elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+        #     for i in range(len(self)):
+        #         self[i] = self[i] + val[i]
+        # else:
+        #     raise TypeError('Operation between invalid types.')
+        # return self
+        return self + val
 
     def __isub__(self, val):
         if isinstance(val, (int, float)):
@@ -1101,6 +1102,13 @@ class Array2D:
             return total
         else:
             raise TypeError('Operation between invalid types.')
+
+
+    def __pos__(self):
+        return self
+
+    def __neg__(self):
+        return self * -1
 
 
 
