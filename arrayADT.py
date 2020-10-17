@@ -256,40 +256,124 @@ class Array:
         return -1 * self.copy()
     
     def __iadd__(self, val):
-        self = self + val
-    
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] + val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] + val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
+
     def __isub__(self, val):
-        self = self - val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] - val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] - val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __imul__(self, val):
-        self = self * val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] * val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] * val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __itruediv__(self, val):
-        self = self / val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] / val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] / val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
     
     def __ifloordiv__(self, val):
-        self = self // val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] // val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] // val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __imod__(self, val):
-        self = self % val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] % val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] % val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __ilshift__(self, val):
-        self = self << val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] << val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] << val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __irshift__(self, val):
-        self = self >> val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] >> val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] >> val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __ipow__(self, val):
-        self = self ** val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] ** val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] ** val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __iand__(self, val):
-        self = self & val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] & val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] & val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __ior__(self, val):
-        self = self | val
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] | val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] | val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
         
     def __ixor__(self, val):
-        self = self ^ val        
+        if isinstance(val, (int, float)):
+            for i in range(len(self)):
+                self[i] = self[i] ^ val
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            for i in range(len(self)):
+                self[i] = self[i] ^ val[i]
+        else:
+            raise TypeError('Operation between invalid types.')
     
     def __abs__(self):
         total = Array(len(self))
