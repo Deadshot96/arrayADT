@@ -264,6 +264,7 @@ class Array:
                 self[i] = self[i] + val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
 
     def __isub__(self, val):
         if isinstance(val, (int, float)):
@@ -274,6 +275,7 @@ class Array:
                 self[i] = self[i] - val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __imul__(self, val):
         if isinstance(val, (int, float)):
@@ -284,6 +286,7 @@ class Array:
                 self[i] = self[i] * val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __itruediv__(self, val):
         if isinstance(val, (int, float)):
@@ -294,6 +297,7 @@ class Array:
                 self[i] = self[i] / val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
     
     def __ifloordiv__(self, val):
         if isinstance(val, (int, float)):
@@ -314,6 +318,7 @@ class Array:
                 self[i] = self[i] % val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __ilshift__(self, val):
         if isinstance(val, (int, float)):
@@ -324,6 +329,7 @@ class Array:
                 self[i] = self[i] << val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __irshift__(self, val):
         if isinstance(val, (int, float)):
@@ -334,6 +340,7 @@ class Array:
                 self[i] = self[i] >> val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __ipow__(self, val):
         if isinstance(val, (int, float)):
@@ -344,6 +351,7 @@ class Array:
                 self[i] = self[i] ** val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __iand__(self, val):
         if isinstance(val, (int, float)):
@@ -354,6 +362,7 @@ class Array:
                 self[i] = self[i] & val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __ior__(self, val):
         if isinstance(val, (int, float)):
@@ -364,6 +373,7 @@ class Array:
                 self[i] = self[i] | val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
         
     def __ixor__(self, val):
         if isinstance(val, (int, float)):
@@ -374,6 +384,11 @@ class Array:
                 self[i] = self[i] ^ val[i]
         else:
             raise TypeError('Operation between invalid types.')
+        return self
+
+
+    def __radd__(self, val):
+        print("val: ", val, sep="\t")
     
     def __abs__(self):
         total = Array(len(self))
