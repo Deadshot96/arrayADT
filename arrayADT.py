@@ -795,11 +795,11 @@ class Array2D:
         else:
             raise TypeError('Operation between invalid types.')
 
-            
-
+    
     def __sub__(self, val):
         pass
-     
+
+
     
            
         
