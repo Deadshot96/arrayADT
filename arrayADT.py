@@ -1110,6 +1110,42 @@ class Array2D:
     def __neg__(self):
         return self * -1
 
+    def __iadd__(self, val):
+        return self + val
+
+    def __isub__(self, val):
+        return self - val
+
+    def __imul__(self, val):
+        return self * val
+
+    def __itruediv__(self, val):
+        return self / val
+
+    def __ifloordiv__(self, val):
+        return self // val
+
+    def __imod__(self, val):
+        return self % val
+
+    def __ipow__(self, val):
+        return self ** val
+
+    def __ilshift__(self, val):
+        return self << val
+
+    def __irshift__(self, val):
+        return self >> val
+
+    def __and__(self, val):
+        return self & val
+
+    def __or__(self, val):
+        return self | val
+
+    def __xor__(self, val):
+        return self ^ val
+
 
 
 
