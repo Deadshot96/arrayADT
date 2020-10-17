@@ -388,8 +388,178 @@ class Array:
 
 
     def __radd__(self, val):
-        print("val: ", val, sep="\t")
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = self[i] + val
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = self[i] + val[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rsub__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val - self[i]
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] - self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+
+    def __rmul__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = self[i] * val
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = self[i] * val[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rdiv__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val / self[i]
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] / self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rfloordiv__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val // self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] // self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rmod__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val % self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] % self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rpow__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val ** self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] ** self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rlshift__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val << self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] << self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    def __rrshift__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val >> self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] >> self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+
+    def __rand__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val & self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] & self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
     
+    def __rxor__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val ^ self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] ^ self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+    
+
+    def __ror__(self, val):
+        if isinstance(val, (int, float)):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val | self[i] 
+            return total
+        elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
+            total = Array(len(self))
+            for i in range(len(self)):
+                total[i] = val[i] | self[i]
+            return total
+        else:
+            raise TypeError('Operation between invalid types.')
+
+
     def __abs__(self):
         total = Array(len(self))
         for index in range(len(self)):
