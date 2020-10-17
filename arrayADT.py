@@ -769,19 +769,33 @@ class Array2D:
         return self.numRows()
     
     def __add__(self, val):
+        total = Array2D(self.numRows(), self.numCols())
         if isinstance(val, (int, float)):
-            total = Array2D(self.numRows(), self.numCols())
             for i in range(self.numRows()):
                 for j in range(self.numCols()):
                     total[i, j] = self[i, j] + val
             return total
         elif isinstance(val, Array2D) and self.shape() == val.shape():
-            total = Array2D(self.numRows(), self.numCols())
             for i in range(self.numRows()):
                 for j in range(self.numCols()):
                     total[i, j] = self[i, j] + val[i, j]
             return total
+        elif isinstance(val, (list, tuple)) and len(val) == self.numRows():
+            s = set(list(map(len, val)))
+            if len(s) == 1 and s.pop() == self.numCols():
+                pass
 
+            for row in val:
+                if not isinstance(row, (list, tuple)) and len(row) != self.numCols():
+                    raise IndexError("Invalid indices.")
+            else:
+                for i, row in enumerate(val):
+                    for j, index in enumerate(row):
+                        total[i, j] = self[i, j] + val[i, j] 
+        else:
+            raise TypeError('Operation between invalid types.')
+
+            
 
     def __sub__(self, val):
         pass
