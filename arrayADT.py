@@ -781,23 +781,13 @@ class Array2D:
                 for j in range(self.numCols()):
                     total[i, j] = self[i, j] + val[i, j]
             return total
+
+
+    def __sub__(self, val):
+        pass
+     
     
-
-
-#if isinstance(val, (int, float)):
-    #total = Array(len(self))
-    #for index in range(len(self)):
-        #total[i] = self[i] // val
-    #return total
-#elif isinstance(val, (list, tuple, Array)) and len(self) == len(val):
-    #total = Array(len(self))
-    #for index in range(len(self)):
-        #total[i] = self[i] // val[i]
-    #return total
-#else:
-    #raise TypeError('Operation between invalid types.')
-            
-            
+           
         
 
 class MultiArray:
