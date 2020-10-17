@@ -430,7 +430,7 @@ class Array:
         else:
             raise TypeError('Operation between invalid types.')
 
-    def __rdiv__(self, val):
+    def __rtruediv__(self, val):
         if isinstance(val, (int, float)):
             total = Array(len(self))
             for i in range(len(self)):
